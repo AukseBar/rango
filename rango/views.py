@@ -2,7 +2,7 @@ from rango.models import Page
 from django.shortcuts import render
 from django.http import HttpResponse
 from rango.models import Category
-from rango.forms import CategoryForm
+from rango.forms import CategoryForm, PageForm
 
 
 def show_category(request, category_name_slug):
@@ -75,8 +75,6 @@ def add_category(request):
     # Render the form with error messages (if any).
     return render(request, 'rango/add_category.html', {'form': form})
 
-
-from rango.forms import PageForm
 
 
 def add_page(request, category_name_slug):
