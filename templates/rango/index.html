@@ -10,8 +10,13 @@
 
     <body>
         <h1>Rango says...</h1>
-        <div>
-            hey there partner! <br /> 
+            {% if user.is_authenticated %}
+				howdy {{user.username}}!
+			{% else %}
+				hey there partner!
+			{% endif %}
+			
+		<br /> 
 <div>
     {% if categories %}
     	<h2>Most Liked Categories</h2>
@@ -46,6 +51,5 @@
 			<img src="{% static "images/rango.jpg" %}"
                  alt="Picture of Rango" /> 
         </div>
-    </body>
 
 {% endblock %}
